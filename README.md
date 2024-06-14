@@ -8,6 +8,8 @@ https://docs.google.com/document/d/1Yy8fj-ZzeUiC8Wb4_KB_OGcSpDwiy8t7S5DUiJhbY-Y/
 https://trello.com/b/MXWoZiPk/infradev
 
 **Lancement du projet**
+(Regarder le README2.md pour voir l'installation des dépendances du projet)
+
 Mettre le projet dans le dossier www du repertoire de Wampp.
 Puis rentrer le lien suivant dans le navigateur :
 http://localhost/reservation/reservation-system/public/login.php
