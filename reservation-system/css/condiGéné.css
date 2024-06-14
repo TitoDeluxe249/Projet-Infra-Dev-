@@ -1,0 +1,66 @@
+.navbar {
+    background-color: #12144f;
+    color: white;
+}
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+h2 {
+    margin-top: 20px;
+}
+ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+footer {
+    background-color: #12144f;
+    color: white;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+footer .container div {
+    flex: 1;
+    text-align: center;
+}
+footer .container div a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+footer .container .form-inline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .container .form-inline input {
+    width: auto;
+    margin-right: 10px;
+}
+footer .container .form-inline button {
+    background-color: #FFD700;
+    border: none;
+    color: #12144f;
+}
+footer .text-center {
+    margin-top: 10px;
+}

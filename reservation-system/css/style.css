@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #000000;
+    color: white;
+    padding: 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    background-image: url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-form input, .search-form button {
+    padding: 10px;
+    font-size: 1em;
+}
+
+.search-form button {
+    background-color: #0080ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.offers, .destinations, .testimonials {
+    padding: 50px 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;  
+    padding: 20px;
+    background-color: #000000;
+    color: white;
+}
+
+.useful-links ul {
+    list-style: none;
+}
+
+.useful-links ul li {
+    margin-bottom: 10px;
+}
+
+.social-media a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.newsletter input {
+    padding: 10px;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+.newsletter button {
+    padding: 10px;
+    font-size: 1em;
+    background-color: #0080ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+footer p {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #000000;
+    color: white;
+    margin: 0;
+}

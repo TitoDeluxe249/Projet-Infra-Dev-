@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+header {
+    background-color: #001e3e;
+    border-bottom: 2px solid #001e3e;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.top-bar {
+    background-color: #001e3e;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-align: right;
+    font-size: 0.9rem;
+}
+.top-bar a {
+    color: white;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+.logo img {
+    width: 150px;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #FFD700;
+}
+main {
+    margin-top: 140px;
+    padding: 2rem;
+    text-align: center;
+}
+.search-container {
+    background: url('/avion.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 4rem 2rem;
+    color: rgb(11, 16, 85);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.search-container h1 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+.search-container form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.search-container input,
+.search-container select,
+.search-container button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.search-container input,
+.search-container select {
+    width: 200px;
+}
+.search-container button {
+    background-color: #FFD700;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.search-container button:hover {
+    background-color: #FFC107;
+}
+.offers {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #001e3e;
+    border-radius: 10px;
+}
+.offers h2 {
+    margin-bottom: 1.5rem;
+    color: white;
+}
+.offer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.offer img {
+    width: 100px;
+    border-radius: 5px;
+}
+.offer-details {
+    flex: 1;
+    margin-left: 1rem;
+}
+.offer-price {
+    font-weight: bold;
+    color: #FFD700;
+}
+footer {
+    background-color: #001e3e;
+    border-top: 2px solid #001e3e;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    color: white;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+}
+footer a:hover {
+    color: #FFD700;
+}
+footer .contact-info,
+footer .newsletter {
+    margin-top: 1rem;
+}
+footer .newsletter input[type="email"] {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+footer .newsletter input[type="submit"] {
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFD700;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+footer .newsletter input[type="submit"]:hover {
+    background-color: #FFC107;
+}

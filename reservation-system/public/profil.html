@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - AIR LAS</title>
+    <link rel="stylesheet" href="../css/profil.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-links">
+                <a class="navbar-brand" href="accueil.html">AirLas</a>
+                <a href="./accueil.html">Accueil</a>
+                <a href="./profil.html">Profil</a>
+                <a href="./flights.html">Réserver un vol</a>
+                <a href="./reservations.html">Mes réservations</a>
+                <a href="./contact.php">Contact</a>
+                <a href="./cart.html">Mon Panier</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container mt-5">
+        <h1>Profil</h1>
+        <div id="profile-info">
+            <h2>Informations de l'utilisateur :</h2>
+            <p>Nom d'utilisateur : <span id="username"></span></p><p>Tito</p>
+            <p>Email : <span id="email"></span></p><p>azertye92@gmail.com</p>
+        </div>
+        <section class="reservations">
+            <h2>Mes réservations</h2>
+            <ul id="reservation-list"></ul>
+        </section>
+    </main>
+    <footer>
+        <a href="aide.html">Aide</a>
+        <a href="GénéralCondition.html">Conditions Générales</a>
+        <a href="Confidentiality.html">Politique de Confidentialité</a>
+        <div class="contact-info">
+            <p>Email: <a href="contact.php">contactbusiness@airlas.com</a></p>
+        </div>
+        <div class="newsletter">
+            <form>
+                <input type="email" placeholder="Votre email">
+                <input type="submit" value="S'inscrire">
+            </form>
+        </div>
+        <p>© 2024 Air LAS. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fonction pour vérifier si l'utilisateur est connecté
+            function checkLoginStatus() {
+                fetch('http://localhost:8000/api/check-login-status', {
+                    method: 'GET',
+                    credentials: 'include'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.loggedIn) {
+                        // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
+                        window.location.href = 'login.php';
+                    } else {
+                        // Charger le profil de l'utilisateur
+                        loadProfile();
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                });
+            }
+
+            fetch('http://localhost:8000/api/reservations')
+                .then(response => response.json())
+                .then(reservations => {
+                    const reservationsList = document.getElementById('reservation-list');
+                    reservations.forEach(reservation => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = `User ID: ${reservation.user_id}, Flight ID: ${reservation.flight_id}, Booking Date: ${reservation.booking_date}`;
+                        reservationsList.appendChild(listItem);
+                    });
+                })
+                .catch(error => console.error('Error fetching reservations:', error));
+
+            fetch('http://localhost:8000/api/flights')
+                .then(response => response.json())
+                .then(flights => {
+                    const reservationsList = document.getElementById('reservation-list');
+                    reservations.forEach((reservation) => {
+                        const flight = flights.find(f => f.id == reservation.flight_id);
+                        if (flight) {
+                            const listItem = document.createElement('li');
+                            listItem.innerHTML = `
+                                <h4><i><u>${flight.airline}</u></i></h4>
+                                <p><strong>Flight Number:</strong> ${flight.flight_number}</p>
+                                <p><strong>Departure:</strong> ${flight.departure}</p>
+                                <p><strong>Arrival:</strong> ${flight.arrival}</p>
+                                <p><strong>Date:</strong> ${flight.date}</p>
+                                <p><strong>Departure Time:</strong> ${flight.departure_time}</p>
+                                <p><strong>Arrival Time:</strong> ${flight.arrival_time}</p>
+                                <p><strong>Price:</strong> $${flight.price}</p>
+                                <button class="btn btn-danger" onclick="removeFromCart(${reservation.id})">Supprimer</button>
+                            `;
+                            reservationsList.appendChild(listItem);
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching flights:', error));
+
+            // Fonction pour charger les informations de l'utilisateur et ses codes promos
+            function loadProfile() {
+                fetch('http://localhost::8000/api/user/profile', { // Assurez-vous que le chemin est correct
+                    method: 'GET',
+                    credentials: 'include'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Mettre à jour les éléments HTML avec les informations de l'utilisateur
+                    document.getElementById('username').innerText = data.username;
+                    document.getElementById('email').innerText = data.email;
+
+                    // Récupérer les codes promos de l'utilisateur
+                    const promoCodes = data.promoCodes;
+                    const promoCodesList = document.getElementById('promo-codes');
+
+                    // Afficher les codes promos dans une liste
+                    promoCodes.forEach(code => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = code;
+                        promoCodesList.appendChild(listItem);
+                    });
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                });
+            }
+
+            // Appeler la fonction pour vérifier le statut de connexion lorsque la page est chargée
+            checkLoginStatus();
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

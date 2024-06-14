@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation de vols - AIR LAS</title>
+    <link rel="stylesheet" href="../css/accueil.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <a href="login.php">Se connecter</a>
+            <a href="register.php">Créer mon compte</a>
+        </div>
+        <nav>
+            <div class="nav-links">
+                <a class="navbar-brand" href="accueil.html"><h2>AirLas</h2></a>
+                <a href="./accueil.html">Accueil</a>
+                <a href="./profil.html">Profil</a>
+                <a href="./flights.html">Réserver un vol</a>
+                <a href="./reservations.html">Mes réservations</a>
+                <a href="./contact.php">Contact</a>
+                <a href="./cart.html">Mon Panier</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="search-container">
+            <h1>Réservez vos vols avec AIR LAS</h1>
+            <form id="search-form" action="recherche_vols.php" method="GET">
+                <select name="trip_type">
+                    <option value="aller-retour">Aller-retour</option>
+                    <option value="aller-simple">Aller-simple</option>
+                </select>
+                <input type="text" name="departure" placeholder="Départ">
+                <input type="text" name="destination" placeholder="Destination">
+                <input type="date" name="departure_date">
+                <input type="date" name="return_date">
+                <button type="submit">Rechercher</button>
+            </form>
+        </div>
+        <div class="offers">
+            <h2>Offres et destinations</h2>
+            <div class="offer">
+                <div class="offer-details">
+                    <a href="flights.html"><h3>New York</h3></a>
+                    <p>(États-Unis)</p>
+                </div>
+                <div class="offer-price">À partir de 141 EUR</div>
+            </div>
+            <div class="offer">
+                <div class="offer-details">
+                    <a href="flights.html"><h3>Tokyo</h3></a>
+                    <p>(Japon)</p>
+                </div>
+                <div class="offer-price">À partir de 317 EUR</div>
+            </div>
+            <div class="offer">
+                <div class="offer-details">
+                    <a href="flights.html"><h3>Madrid</h3></a>
+                    <p>(Espagne)</p>
+                </div>
+                <div class="offer-price">À partir de 145 EUR</div>
+            </div>
+            <div class="offer">
+                <div class="offer-details">
+                    <a href="flights.html"><h3>Toronto</h3></a>
+                    <p>(Canada)</p>
+                </div>
+                <div class="offer-price">À partir de 366 EUR</div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="aide.html">Aide</a>
+        <a href="GénéralCondition.html">Conditions Générales</a>
+        <a href="Confidentiality.html">Politique de Confidentialité</a>
+        <div class="contact-info">
+            <p>Email: <a href="contact.php">contactbusiness@airlas.com</a></p>
+        </div>
+        <div class="newsletter">
+            <form>
+                <input type="email" placeholder="Votre email">
+                <input type="submit" value="S'inscrire">
+            </form>
+        </div>
+        <p>© 2024 Air LAS. Tous droits réservés.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchForm = document.getElementById('search-form');
+            searchForm.addEventListener('submit', (event) => {
+                event.preventDefault(); // Empêche le formulaire de se soumettre normalement
+                const formData = new FormData(searchForm);
+                const searchParams = new URLSearchParams(formData).toString();
+                window.location.href = `recherche_vols.php?${searchParams}`; // Redirige vers la page de recherche avec les paramètres de recherche
+            });
+        });
+    </script>

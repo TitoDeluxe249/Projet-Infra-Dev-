@@ -1,0 +1,77 @@
+.header-bar {
+    background-color: #12144f;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+}
+
+.header-bar .left-section img {
+    height: 40px;
+}
+
+.header-bar .right-section {
+    display: flex;
+    align-items: center;
+}
+
+.header-bar .right-section a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: #12144f;
+    color: white;
+}
+
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+
+footer {
+    background-color: #12144f;
+    color: white;
+    padding: 20px 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer .container div {
+    flex: 1;
+    text-align: center;
+}
+
+footer .container div a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .container .form-inline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .container .form-inline input {
+    width: auto;
+    margin-right: 10px;
+}
+
+footer .container .form-inline button {
+    background-color: #FFD700;
+    border: none;
+    color: #12144f;
+}
+
+footer .text-center {
+    margin-top: 10px;
+}

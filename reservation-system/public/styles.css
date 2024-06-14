@@ -1,0 +1,178 @@
+/* styles.css */
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Style */
+body {
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Header Style */
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+header img {
+    height: 150px;
+    display: none;
+}
+
+header nav {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Section */
+main {
+    padding: 50px 0;
+}
+
+main h1 {
+    font-size: 36px;
+    color: #15073a;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 18px;
+    color: #1e1d1d;
+    margin-bottom: 40px;
+}
+
+/* Form Container with Background Image */
+.form-container {
+    background: url('/reservation-system/HomeFlight.jpeg') no-repeat center center;
+    background-size: cover;
+    padding: 50px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+/* Search Form */
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.8); /* Adding a white background with opacity */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form input[type="text"], 
+form input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 150px;
+}
+
+form input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* Sidebar */
+.sidebar {
+    text-align: left;
+    padding: 20px;
+}
+
+.sidebar a {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: auto; /* Ensures the footer is at the bottom */
+}
+
+footer a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .contact-info {
+    margin-top: 10px;
+}
+
+footer .contact-info p {
+    margin: 5px 0;
+}
+
+footer .newsletter {
+    margin-top: 20px;
+}
+
+footer .newsletter input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+footer .newsletter input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+footer .newsletter input[type="submit"]:hover {
+    background-color: #777;
+}
+
+.logo {
+    width: 250px;
+}
+
+.logo2 {
+    width: 250px;
+}

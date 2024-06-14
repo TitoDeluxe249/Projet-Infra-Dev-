@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/flights.css">
+    <link rel="stylesheet" href="../css/flights2.css">
+    <title>Réserver un vol</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="accueil.html">AirLas</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="accueil.html">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="flights.html">Réserver un vol</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profil.html">Profil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="reservations.html">Reservations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.php">Contact</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="cart.html">Panier</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5 content">
+        <h2><i><b>LES VOLS D'AVIONS</b></i></h2>
+
+        <div class="row" id="flights-container"></div>
+    </div>
+
+    <footer>
+        <div class="text-center p-3" style="background-color: #001e3e; color: white;">
+            © 2024 Airline Las Reservation. Tous droits réservés.
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('http://localhost:8000/api/flights')
+                .then(response => response.json())
+                .then(data => {
+                    const flightsContainer = document.getElementById('flights-container');
+                    data.forEach(flight => {
+                        const flightCard = document.createElement('div');
+                        flightCard.className = 'col-md-9 flight-card';
+                        flightCard.innerHTML = `
+                            <h4><i><u>${flight.airline}</u></i></h4>
+                            <p><strong>Flight Number:</strong> ${flight.flight_number}</p>
+                            <p><strong>Departure:</strong> ${flight.departure}</p>
+                            <p><strong>Arrival:</strong> ${flight.arrival}</p>
+                            <p><strong>Date:</strong> ${flight.date}</p>
+                            <p><strong>Departure Time:</strong> ${flight.departure_time}</p>
+                            <p><strong>Arrival Time:</strong> ${flight.arrival_time}</p>
+                            <p><strong>Price:</strong> $${flight.price}</p>
+                            <button class="btn btn-primary add-to-cart" data-id="${flight.id}">Ajouter au panier</button>
+                        `;
+                        flightsContainer.appendChild(flightCard);
+                    });
+
+                    // Ajouter des écouteurs d'événements aux boutons
+                    document.querySelectorAll('.add-to-cart').forEach(button => {
+                        button.addEventListener('click', (event) => {
+                            const flightId = event.target.getAttribute('data-id');
+                            addToCart(flightId);
+                        });
+                    });
+                })
+                .catch(error => console.error('Error fetching flights:', error));
+        });
+
+        function addToCart(flightId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (!cart.includes(flightId)) {
+                cart.push(flightId);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert('Vol ajouté au panier !');
+            } else {
+                alert('Le vol est déjà dans le panier.');
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

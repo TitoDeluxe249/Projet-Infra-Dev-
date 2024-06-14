@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+header {
+    background-color: #12144f;
+    border-bottom: 2px solid #12144f;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.top-bar {
+    background-color: #12144f;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-align: right;
+    font-size: 0.9rem;
+}
+.top-bar a {
+    color: white;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+.logo img {
+    width: 150px;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #FFD700;
+}
+main {
+    margin-top: 140px;
+    padding: 2rem;
+}
+.reservations-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+.reservations-container h1 {
+    margin-bottom: 1rem;
+    color: #12144f;
+}
+.reservations .reservation {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, border 0.3s;
+}
+.reservations .reservation:nth-child(odd) {
+    background-color: #e7f3ff; /* Light blue background for odd reservations */
+    border: 2px solid #12144f;
+}
+.reservations .reservation:nth-child(even) {
+    background-color: #fef7e7; /* Light yellow background for even reservations */
+    border: 2px solid #FFD700;
+}
+.reservations .reservation h3 {
+    margin: 0;
+    color: #12144f;
+}
+.reservations .reservation p {
+    margin: 0.5rem 0;
+}
+footer {
+    background-color: #12144f;
+    border-top: 2px solid #12144f;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    color: white;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+}
+footer a:hover {
+    color: #FFD700;
+}
+footer .contact-info,
+footer .newsletter {
+    margin-top: 1rem;
+}
+footer .newsletter input[type="email"] {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+footer .newsletter input[type="submit"] {
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFD700;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+footer .newsletter input[type="submit"]:hover {
+    background-color: #FFC107;
+}

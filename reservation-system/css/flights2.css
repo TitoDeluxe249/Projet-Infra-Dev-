@@ -1,0 +1,55 @@
+.navbar {
+    background-color: #001e3e;
+    color: white;
+}
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+
+/* Content container styling */
+.content {
+    margin-top: 20px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #001e3e;
+    color: white;
+    padding: 20px 0;
+}
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+footer .container div {
+    flex: 1;
+    text-align: center;
+}
+footer .container div a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+footer .container .form-inline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .container .form-inline input {
+    width: auto;
+    margin-right: 10px;
+}
+footer .container .form-inline button {
+    background-color: #FFD700;
+    border: none;
+    color: #001e3e;
+}
+footer .text-center {
+    margin-top: 10px;
+}
+
+.h2 {
+    color: #9d7e02;
+}

@@ -1,0 +1,38 @@
+/* flights.css */
+
+.container {
+    max-width: 800px;
+    margin-left: 0; /* Aligns the container to the left */
+    padding: 20px;
+}
+
+/* Flight card styles */
+.flight-card {
+    border: 5px solid #ddd;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 20px;
+    text-align: left;
+    background-color: #12144f;
+    width: 500px;
+    height: 400px;
+    color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .content {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .ad-left, .ad-right {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 20px;
+    }
+}
